@@ -1,0 +1,19 @@
+<template name="manageUsers">
+    <div class="page-container container">
+        <div class="row">
+            <div class="col-md-12, col-lg-12"><h2>Manage Users</h2></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12, col-lg-12"><h3>Users</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="list-group">
+                    {{#each getUsers}}
+                        <a href="{{userProfilePath ADM}}" class="list-group-item">{{ADM}}:&nbsp;&nbsp;&nbsp;&nbsp;{{USER_NME}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

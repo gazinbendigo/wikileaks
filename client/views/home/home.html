@@ -1,0 +1,16 @@
+<template name="home">
+    <div class="page-container container">
+        <h2>Welcome to Leaky Wikileaks</h2>
+        <div class="menu-spacer"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Public List</h4>
+                <ul class="no-bullets">
+                {{#each leaks}}
+                    <li>{{title}}&nbsp;&nbsp;&nbsp;{{author}}&nbsp;&nbsp;&nbsp;{{publisher}}</li>
+                 {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
