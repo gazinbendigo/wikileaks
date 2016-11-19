@@ -25,5 +25,9 @@ Template.publicMenu.helpers({
 
     updateConfigurationPath: function () {
         return FlowRouter.path('updateConfiguration');
+    },
+
+    loginPath: () => {
+        return FlowRouter.path("login");
     }
 });

@@ -9,9 +9,16 @@ const authenticatedRoutes = FlowRouter.group({
 });
 
 const publicRoutes = FlowRouter.group({
-    name: 'public',
-    triggersEnter: [publicRedirect] //Allows an Array of functions to be executed b4 all of the routes in our Public Group
+    name: 'public'//,
+    //triggersEnter: [publicRedirect] //Allows an Array of functions to be executed b4 all of the routes in our Public Group
 });
+
+const publicRedirect = (context, redirect) => {
+    //If the user is logged in redirect them to a logged in page.
+    if(Meteor.userId()){
+
+    }
+}
 
 publicRoutes.route( '/invite/:token', {
     name: 'invite',
@@ -28,9 +35,10 @@ publicRoutes.route('/', {
 });
 
 /* Page not Found */
-FlowRouter.notFound = {
+publicRoutes.notFound = {
+    name: "notFound",
     action() {
-        BlazeLayout.render( 'default', { yield: 'notFound' } );
+        BlazeLayout.render("baseLayout", {content: 'notFound', menu: "publicMenu" } );
     }
 };
 
@@ -38,7 +46,14 @@ FlowRouter.notFound = {
 publicRoutes.route( '/login', {
     name: 'login',
     action() {
-        BlazeLayout.render( 'default', { yield: 'login' } );
+        BlazeLayout.render("baseLayout", {content: "login", menu: "publicMenu"});
+    }
+});
+
+publicRoutes.route("/register", {
+    name: "register",
+    action() {
+        BlazeLayout.render("baseLayout", {content: "register", menu: "publicMenu"});
     }
 });
 

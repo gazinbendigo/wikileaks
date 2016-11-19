@@ -14,6 +14,13 @@ Meteor.publish("ApplicationRoles", function(){
     return ApplicationRoles.find({});
 });
 
-Meteor.publish(("UserRoles"), function(){
-    return UserRoles.find({});
+Meteor.publish(("userdata"), function(){
+    let currentUser = this.userId;
+    if(currentUser){
+        return Meteor.users.find({_id: currentUser});
+    }
+    else {
+        return this.ready();
+    }
+    //return UserRoles.find({});
 });

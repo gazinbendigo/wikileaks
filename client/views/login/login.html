@@ -1,0 +1,41 @@
+<template name="login">
+    <div class="page-container container">
+        <div class="menu-spacer"></div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="well">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Login <small><a href="{{getRegisterPath}}" class="text-right">Registered ?</a></small></legend>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                                    <div class="col-lg-10">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" id="rememberMe">Remember Me?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                    <button type="button" id="loginBttn" class="btn btn-primary">Login</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
